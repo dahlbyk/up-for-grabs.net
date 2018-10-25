@@ -5,6 +5,7 @@ exclude:
   - Gemfile*
   - tests
   - README.md
+  - CODE_OF_CONDUCT.md
   - scripts
   - .travis.yml
   - vendor
