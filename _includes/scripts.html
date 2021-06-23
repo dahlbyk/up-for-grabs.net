@@ -1,34 +1,36 @@
 <script type="text/html" id="projects-panel-template">
-  <div class="filters-panel cf">
-    <h5><label for="project">Filter by name:</label></h5>
-    <select class="names-filter" id="project" multiple data-placeholder="Select a project..." >
-      <% _.each(names, function(entry, key){ %>
+  <menu> 
+    <div class="filters-panel cf">
+      <h5><label for="project">Filter by name:</label></h5>
+      <select class="names-filter" id="project" multiple data-placeholder="Select a project..." >
+        <% _.each(names, function(entry, key){ %>
+          <option value="<%-key%>"><%- entry.name%></option>
+        <% }) %>
+      </select>
+    </div>
+    <div class="filters-panel cf">
+      <h5><label for="label">Filter by label: </label></h5>
+      <select class="labels-filter" id="label" multiple data-placeholder="Select a label..." >
+      <% _.each(labels, function(entry, key){ %>
         <option value="<%-key%>"><%- entry.name%></option>
       <% }) %>
-    </select>
-  </div>
-  <div class="filters-panel cf">
-    <h5><label for="label">Filter by label: </label></h5>
-    <select class="labels-filter" id="label" multiple data-placeholder="Select a label..." >
-    <% _.each(labels, function(entry, key){ %>
-      <option value="<%-key%>"><%- entry.name%></option>
-    <% }) %>
-    </select>
-  </div>
-  <div class="filters-panel cf">
-    <h5><label for="tag">Filter by tags: </label></h5>
-    <select class="tags-filter" id="tag" multiple data-placeholder="Select a tag..." >
-    <% _.each(tags, function(entry, key){ %>
-      <option value="<%-entry.name%>"><%- entry.name%>  (<%-entry.frequency%>)</option>
-    <% }) %>
-    </select>
-    <h5>Popular tags: </h5>
-    <ul class="popular-tags">
-    <% _.each(popularTags, function(entry, key){ %>
-      <li><a><%-entry.name%></a> (<%-entry.frequency%>)</li>
-    <% }) %>
-    </ul>
-  </div>
+      </select>
+    </div>
+    <div class="filters-panel cf">
+      <h5><label for="tag">Filter by tags: </label></h5>
+      <select class="tags-filter" id="tag" multiple data-placeholder="Select a tag..." >
+      <% _.each(tags, function(entry, key){ %>
+        <option value="<%-entry.name%>"><%- entry.name%>  (<%-entry.frequency%>)</option>
+      <% }) %>
+      </select>
+      <h5>Popular tags: </h5>
+      <ul class="popular-tags">
+      <% _.each(popularTags, function(entry, key){ %>
+        <li><a><%-entry.name%></a> (<%-entry.frequency%>)</li>
+      <% }) %>
+      </ul>
+    </div>
+  </menu>
   <table class="projects">
    <% _.each(projects, function(project) { %>
     <tbody class="<% if ( project.stats ) { %>counted<% } %>">
