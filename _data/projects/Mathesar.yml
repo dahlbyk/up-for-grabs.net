@@ -1,0 +1,16 @@
+
+name: Mathesar
+desc: A self-hostable data storage, visualization, and collaboration tool.
+site: https://wiki.mathesar.org/
+tags:
+- python
+- postgresql
+- postgres
+- django
+- sqlalchemy
+- javascript
+- typescript
+- svelte
+upforgrabs:
+  name: help wanted
+  link: https://github.com/centerofci/mathesar/labels/help%20wanted
